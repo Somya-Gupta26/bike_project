@@ -1,0 +1,104 @@
+      <!-- -----Front end code HTML5 & CSS3----- -->
+
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Prediction</title>
+          <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+      </head>
+      <body>
+          <div id="cls">
+              <form action="{{ url_for('predict') }}" method='post' id="formm" >
+                  <h2 id="main_h"><ul><u>Bike Price Prediction</u></ul></h2><br><br>
+                  <p id="par" ><b>Brand of the bike : </b></p>
+      
+                              <select name="brand_name" id="fifth" required="required">
+                                  <option value="2" >Royal Enfield</option>
+                                  <option value="10">KTM</option>
+                                  <option value="7">Bajaj</option>
+                                  <option value="15">Harley-Davidson</option>
+                                  <option value="4">Yamaha</option>
+                                  <option value="5">Honda</option>
+                                  <option value="8">Suzuki</option>
+                                  <option value="1">TVS</option>
+                                  <option value="12">Kawasaki</option>
+                                  <option value="14">Hyosung</option>
+                                  <option value="9">Benelli</option>
+                                  <option value="11">Mahindra</option>
+                                  <option value="3">Triumph</option>
+                                  <option value="13">Ducati</option>
+                                  <option value="17">BMW</option>
+                              </select><br><br>
+                              <p id="par"><b>Kilometres Driven : </b></p>
+      
+                              <input  name="Kms_Driven" type="number " id="first" required="required"><br><br>
+                              <p id="par"><b>Number of owners the bike had till this date : </b></p>
+                              <input  name="owner" type="number" id="second" required="required"><br><br>
+                              <p id="par"><b>Number of years the bike has been in use : </b></p>
+                              <input type="number" name="age" id="third" required="required"><br><br>
+                              <p id="par"><b>Power of the bike (in CC) : </b></p>
+                              <input type="number" name="power"  id="forth" required="required"><br><br>
+                              <button type="submit" id="btn" >CLICK ME</button>
+                              
+                              <br>
+                              <br><br>
+                              <h3 id="pred">The price of the bike will be around : {{ prediction_text }}<h3>
+                      
+                          </form>
+                          <br>
+                          
+                          
+      
+                      
+      
+                  </div> 
+                  <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 70px;
+                    }
+                    body{
+                        /* background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(plant.jpg); */
+                        height:100vh;
+                        background-color: rgb(127, 137, 164);
+                        background-size:cover;
+                        background-attachment: fixed;
+                    }
+                    form {
+                        max-width: 450px;
+                        margin: 0 auto;
+                        padding: 45px;
+                        background-color: #d1c9c9;
+                        border-radius: 8px;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                        font-style: oblique;
+                    }
+                    label {
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                    input, select {
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+                    button {
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 10px 15px;
+                        border: none;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: #45a049;
+                    }
+                </style>
+      
+      </body>
+      </html>
